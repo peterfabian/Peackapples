@@ -364,6 +364,10 @@ list-style: none;
 }
 /* Posts
 ----------------------------------------------- */
+.status-msg-wrap {
+display: none;
+}
+
 .date-header span {
 background-color: $(date.header.background.color);
 color: $(date.header.color);
@@ -718,7 +722,12 @@ div #PageList1 ul li a:hover {
 
     #odkaz7, #odkaz7 a {width:34px; height:35px; top:0px; left:202px; background:url(https://lh6.googleusercontent.com/-O6C21NwJnaI/VFv9Bm30Z-I/AAAAAAAADEQ/4GqCB0H2N2s/w242-h72-no/ikonyfinal2_small.png) -210px -0px}
 
-    #odkaz7 a:hover {background:url(https://lh6.googleusercontent.com/-O6C21NwJnaI/VFv9Bm30Z-I/AAAAAAAADEQ/4GqCB0H2N2s/w242-h72-no/ikonyfinal2_small.png) -210px -36px}]]></b:skin>
+    #odkaz7 a:hover {background:url(https://lh6.googleusercontent.com/-O6C21NwJnaI/VFv9Bm30Z-I/AAAAAAAADEQ/4GqCB0H2N2s/w242-h72-no/ikonyfinal2_small.png) -210px -36px}
+	
+
+	]]>
+	</b:skin>
+
     <b:template-skin>
       <b:variable default='960px' name='content.width' type='length' value='1250px'/>
       <b:variable default='0' name='main.column.left.width' type='length' value='0px'/>
@@ -813,6 +822,8 @@ width: auto;
       //]]>
     </script>
 
+		
+	
   </head>
 <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
   <div id='fb-root'/>
@@ -1115,6 +1126,81 @@ user is not using shrink to fit then we expand the header.
                         <b:section class='main' id='main' showaddelement='no'>
                           <b:widget id='Blog1' locked='false' title='Blogové príspevky' type='Blog'>
                             <b:includable id='main' var='top'>
+							<!-- extra style for labels -->
+							<b:if cond='data:navMessage'>
+							<style>
+		
+.mod-entry {
+    width: 270px;
+    float: left;
+    padding: 0px;
+    margin: 10px;
+    background: blue;
+    height: 200px;
+    
+}
+
+.mod-entry a {
+display: block;
+height: 200px;
+}
+
+#post-1 {
+	background: url(http://4.bp.blogspot.com/-3uG1diJoTU0/VHJdQVHu3gI/AAAAAAAADMs/m_wroUbVZn8/s1600/1b.jpg);
+	background-size: cover;
+}
+
+#post-2 {
+	background: url(http://4.bp.blogspot.com/-ECZkPc7AVe4/VHEh1H4sbAI/AAAAAAAADLo/_HNY8Q7pfJQ/s1600/4.jpg);
+	background-size: cover;
+}
+
+#post-3 {
+	background: url(http://4.bp.blogspot.com/-Ry8TzwC394g/VGkhqzc_wvI/AAAAAAAADII/hUuAOei1Fvo/s1600/1.jpg);
+	background-size: cover;
+}
+
+.post-imgs {
+	height: 200px;
+}
+ 
+span.text-content span {
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+} 
+ 
+div.mod-entry a:hover span.text-content {
+opacity: 1;
+} 
+
+span.text-content {
+background: rgba(0,0,0,0.5);
+color: white;
+cursor: pointer;
+display: table;
+height: 100%;
+left: 0;
+position: relative;
+/*top: -190px;*/
+width: 100%;
+opacity: 0;
+-webkit-transition: opacity 500ms;
+-moz-transition: opacity 500ms;
+-o-transition: opacity 500ms;
+transition: opacity 500ms;
+} 
+
+
+.date-header {
+	display: none;
+}
+
+
+							</style>
+							</b:if>
+							
+							
                               <b:if cond='data:mobile == &quot;false&quot;'>
                                 <!-- posts -->
                                 <div class='blog-posts hfeed'>
@@ -1165,6 +1251,7 @@ user is not using shrink to fit then we expand the header.
                                   </b:if>
                                   <data:adEnd/>
                                 </div>
+								<div style="clear: both;"></div>
                                 <!-- navigation -->
                                 <b:include name='nextprev'/>
                                 <!-- feed links -->
@@ -1734,7 +1821,25 @@ user is not using shrink to fit then we expand the header.
                               <div class='clear'/>
                             </b:includable>
                             <b:includable id='post' var='post'>
-                              <div class='post hentry' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+<!-- for labels we want to use the tiles instead of regular post layout, so style  it right here -->
+							<b:if cond='data:navMessage'>
+							
+								<!--div class='post hentry'-->
+									
+									
+									<div class="mod-entry">
+										<a expr:href='data:post.url'>
+											<div expr:id='&quot;mod-post-&quot; + data:post.id' class="post-imgs" expr:style="&quot;background: url(&quot; + data:post.firstImageUrl + &quot;); background-size: cover; background-position: center top;&quot;">
+											<span class="text-content"><span><data:post.title/></span></span>
+											</div>
+										</a>
+									</div>
+									
+								<!--/div-->
+							<b:else/>
+  <!-- for index page, use regular layout for [nonlabel page] posts -->
+  
+                                <div class='post hentry' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
                                 <b:if cond='data:post.firstImageUrl'>
                                   <meta expr:content='data:post.firstImageUrl' itemprop='image_url'/>
                                 </b:if>
@@ -1908,6 +2013,8 @@ for good G+/FB snippeting. -->
                                   </b:if>
                                 </div>
                               </div>
+  </b:if>
+  <!-- end of post trickery -->
                             </b:includable>
                             <b:includable id='postQuickEdit' var='post'>
                               <b:if cond='data:post.editUrl'>
