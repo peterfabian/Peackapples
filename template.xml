@@ -75,10 +75,9 @@ $(document).ready(function(){
 });
 //]]></script>
   <head>
-    <link href='http://fonts.googleapis.com/css?family=Petit+Formal+Script|Cinzel+Decorative|Text+Me+One&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-    <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'/>
-    <link href='http://fonts.googleapis.com/css?family=Petit+Formal+Script&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Petit+Formal+Script|Text+Me+One&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
     <b:if cond='data:blog.isMobile'>
       <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
       <b:else/>
@@ -104,7 +103,7 @@ URL:      www.noaesthetic.com
 <Variable name="keycolor" description="Main Color" type="color" default="#66bbdd" value="#ffffff"/>
 <Group description="Page Text" selector="body">
 <Variable name="body.font" description="Font" type="font"
-default="normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal normal 14px Georgia, Utopia, 'Palatino Linotype', Palatino, serif"/>
+default="normal normal 12px 'Ubuntu Condensed', Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal normal 14px 'PT Serif', Georgia, Utopia, 'Palatino Linotype', Palatino, serif"/>
 <Variable name="body.text.color" description="Text Color" type="color" default="#222222" value="#5d5d5d"/>
 </Group>
 <Group description="Backgrounds" selector=".body-fauxcolumns-outer">
@@ -154,7 +153,7 @@ default="#f9f9f9" value="#fdfdfd"/>
 </Group>
 <Group description="Gadgets" selector="h2">
 <Variable name="widget.title.font" description="Title Font" type="font"
-default="normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal bold 11px Yanone Kaffeesatz"/>
+default="normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal bold 11px Ubuntu Condensed"/>
 <Variable name="widget.title.text.color" description="Title Color" type="color" default="#000000" value="#000000"/>
 <Variable name="widget.alternate.text.color" description="Alternate Color" type="color" default="#999999" value="#a3a3a3"/>
 </Group>
@@ -548,8 +547,8 @@ border-$startSide: 1px solid $(tabs.border.color);
 }
 h1.title {font-family: 'Text Me One', sans-serif; font-size:80px;}
 p.description {font-family: 'Petit Formal Script', cursive; text-indent:650px;}
-h3.post-title a {font-family: 'Yanone Kaffeesatz', sans-serif;font-size:25px; color:#666564;}
-h3.post-title {font-family: 'Yanone Kaffeesatz', sans-serif;font-size:25px; color:#666564;}
+h3.post-title a {font-family: 'Ubuntu Condensed', sans-serif;font-size:25px; color:#666564;}
+h3.post-title {font-family: 'Ubuntu Condensed', sans-serif;font-size:25px; color:#666564;}
 h4.podnadpis {font-family: 'Petit Formal Script', cursive;font-size:19px; color:#666564;}
 .post-body img, .post-body .tr-caption-container, .Profile img, .Image img, .BlogList .item-thumbnail img
 {
@@ -1135,7 +1134,7 @@ user is not using shrink to fit then we expand the header.
     float: left;
     padding: 0px;
     margin: 10px;
-    background: blue;
+    background: white;
     height: 200px;
     
 }
@@ -1145,29 +1144,17 @@ display: block;
 height: 200px;
 }
 
-#post-1 {
-	background: url(http://4.bp.blogspot.com/-3uG1diJoTU0/VHJdQVHu3gI/AAAAAAAADMs/m_wroUbVZn8/s1600/1b.jpg);
-	background-size: cover;
-}
-
-#post-2 {
-	background: url(http://4.bp.blogspot.com/-ECZkPc7AVe4/VHEh1H4sbAI/AAAAAAAADLo/_HNY8Q7pfJQ/s1600/4.jpg);
-	background-size: cover;
-}
-
-#post-3 {
-	background: url(http://4.bp.blogspot.com/-Ry8TzwC394g/VGkhqzc_wvI/AAAAAAAADII/hUuAOei1Fvo/s1600/1.jpg);
-	background-size: cover;
-}
-
 .post-imgs {
 	height: 200px;
 }
  
 span.text-content span {
-display: table-cell;
-text-align: center;
-vertical-align: middle;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-size: 28px;
+	text-decoration: none;
 } 
  
 div.mod-entry a:hover span.text-content {
@@ -1182,7 +1169,6 @@ display: table;
 height: 100%;
 left: 0;
 position: relative;
-/*top: -190px;*/
 width: 100%;
 opacity: 0;
 -webkit-transition: opacity 500ms;
