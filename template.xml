@@ -1144,6 +1144,10 @@ display: block;
 height: 200px;
 }
 
+.mod-entry a:hover {
+  text-decoration: none;
+}
+
 .post-imgs {
 	height: 200px;
 }
@@ -1159,7 +1163,7 @@ span.text-content span {
 } 
  
 div.mod-entry a:hover span.text-content {
-opacity: 1;
+	opacity: 1;
 } 
 
 span.text-content {
