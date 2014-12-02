@@ -1157,7 +1157,7 @@ span.text-content span {
 	text-align: center;
 	vertical-align: middle;
 	font-family: 'Ubuntu Condensed', sans-serif;
-	font-size: 28px;
+	font-size: 18px;
 	text-decoration: none;
 	padding: 5px;
 } 
