@@ -1155,6 +1155,7 @@ span.text-content span {
 	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size: 28px;
 	text-decoration: none;
+	padding: 5px;
 } 
  
 div.mod-entry a:hover span.text-content {
@@ -1816,7 +1817,7 @@ transition: opacity 500ms;
 									<div class="mod-entry">
 										<a expr:href='data:post.url'>
 											<div expr:id='&quot;mod-post-&quot; + data:post.id' class="post-imgs" expr:style="&quot;background: url(&quot; + data:post.firstImageUrl + &quot;); background-size: cover; background-position: center top;&quot;">
-											<span class="text-content"><span><data:post.title/></span></span>
+													<span class="text-content"><span><data:post.title/></span></span>
 											</div>
 										</a>
 									</div>
