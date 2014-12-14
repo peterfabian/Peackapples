@@ -448,6 +448,10 @@ margin: .2em 0 0;
 #comments .avatar-image-container img {
 border: 1px solid $(image.border.color);
 }
+.jump-link {
+margin-bottom: 30px;
+}
+
 /* Comments
 ----------------------------------------------- */
 .comments .comments-content .icon.blog-author {
