@@ -2179,7 +2179,7 @@ transition: opacity 500ms;
 							</style>
 
 								  <div class='gdlr-related-post-widget'>
-									<h3 class='related-post-title'>Čekni aj toto, bič, plieska na konci:</h3>
+									<h3 class='related-post-title'>Čekni aj toto:</h3>
 									<div id='related-posts'>
 
 										<b:loop values='data:post.labels' var='label'>
